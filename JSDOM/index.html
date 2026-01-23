@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <button onclick="userClick()">Click Me</button>
+    <div onclick="divClick()">Click Me</div>
+    <input type="radio"  name="gender" value="male" onchange="changeGender()"> Male
+    <input type="radio"  name="gender" value="female" onchange="changeGender()"> Female
+    <script> 
+
+
+/*
+    *****    body
+    ชื่อ : <input
+    id = "fname"
+    class= "input"
+    type ="text"
+    name = "fname"
+    value = "ชื่อทดสอบ">
+
+    นามสกุล : <input
+    id = "lname"
+    class = "input"
+    type ="text"
+    name = "lname"
+    value = "นามสกุลทดสอบ">
+
+    เบอร์โทร : <input
+    id = "phone"
+    class = "input"
+    type ="text"
+    name = "phone"
+    value = "0123456789">
+   
+    งานอดิเรห :
+    <input type="checkbox" name = "fname" value="football"> footboll
+    <input type="checkbox" name = "fname" value="basketball"> basketball
+    <input type="checkbox" name = "fname" value="swim"> swim
+
+*/ 
+
+
+    /*        let fnameInput = document.getElementById('fname');
+        console.log(fnameInput.value); */
+
+    /*    let inputs = document.getElementsByClassName('input');
+    console.log(inputs); // จะแสดง HTMLCollection
+
+    for (let i = 0; i < inputs.length; i++) {
+        console.log(inputs[i].value);
+    } */
+
+    /*    let inputs = document.querySelector('#fname')
+        console.log(inputs.value); */
+
+    /*    let inputs = document.querySelector('input[name="fname"]');
+        console.log(inputs.value); */
+
+    /*    let checkboxes = document.querySelectorAll('input[type="checkbox"]')
+        console.log(checkboxes);
+
+        for (let i = 0; i < checkboxes.length; i++) {
+             console.log(checkboxes[i].value);
+        } */
+       
+        function userClick() {
+            console.log("Botton was clicked");
+        }   
+        function divClick() {
+            console.log("Div was clicked");
+        }
+        function changeGender() {
+            console.log("Gender was changed");
+        }
+        function changeGender() {
+        let genders = document.querySelectorAll('input[name="gender"]');
+            for (let i=0;i<i<genders.length;i++) {
+                if(genders[i].checked) {
+                    console.log("Gender selected: " + genders[i].value);
+    
+                }   
+            }
+        }
+    </script>
+
+</body>
+</html>
