@@ -1,0 +1,126 @@
+/* นำเข้าฟอนต์ Google Fonts ที่ดูวัยรุ่นและอ่านง่าย */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+body {
+    background-color: #fff0f3; /* พื้นหลังชมพูอ่อนมาก */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container หลัก ทรงมนและมีเงาฟุ้ง */
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 40px; 
+    box-shadow: 0 20px 50px rgba(255, 182, 193, 0.4); /* เงาชมพูฟุ้งๆ */
+    width: 100%;
+    max-width: 450px;
+    border: 8px solid #fff; /* ขอบขาวหนาๆ เพิ่มความนุ่ม */
+}
+
+/* หัวข้อ Register form */
+.header {
+    font-size: 32px;
+    font-weight: 500;
+    color: #ff85a1; /* ชมพูเข้ม */
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 0px #ffe5ec;
+}
+
+/* ส่วนของ Input แต่ละแถว */
+.form-input {
+    margin-bottom: 20px;
+    color: #ff85a1;
+}
+
+.header-form {
+    font-weight: 500;
+    margin-bottom: 8px;
+    padding-left: 10px;
+}
+
+/* ปรับแต่งช่องกรอกข้อมูลให้ดูบุ๋มลงไป (Inner Shadow) */
+.form, textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #fff5f7;
+    color: #884d5a;
+    outline: none;
+    font-size: 16px;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.05); /* ทำให้ดูบุ๋มลง */
+    transition: all 0.3s ease;
+}
+
+.form:focus, textarea:focus {
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 133, 161, 0.2);
+}
+
+/* ปรับแต่งพวก Radio และ Checkbox */
+.flex {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.gender .flex div, .form-input div {
+    background: #fff;
+    padding: 8px 15px;
+    border-radius: 15px;
+    border: 2px solid #ffe5ec;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    accent-color: #ff85a1;
+    transform: scale(1.2);
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* ปุ่มกดทรง Bubble */
+.center {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.button {
+    background: linear-gradient(145deg, #ff85a1, #ffb3c1);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(255, 133, 161, 0.4);
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(255, 133, 161, 0.6);
+}
+
+.button:active {
+    transform: translateY(0);
+}
