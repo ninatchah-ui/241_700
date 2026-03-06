@@ -124,3 +124,24 @@ textarea {
 .button:active {
     transform: translateY(0);
 }
+
+.message {
+    background-color: lightgrey;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    display: none;
+}
+
+.message.success {
+    text-align: center;
+    color: #884d5a;
+    background-color: #d4edda;
+    display: block;
+}
+
+.message.danger {
+    color: #ff85a1;
+    background-color: #f8d7da;
+    display: block;
+}
