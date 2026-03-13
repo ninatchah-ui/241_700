@@ -61,7 +61,8 @@ const submitData = async () => {
                 message: 'กรอกข้อมูลให้ครบถ้วน',
                 errors: errors
             };
-        }
+        } 
+    
 
         const response = await axios.post('http://localhost:8000/users', userData);
 
@@ -73,20 +74,23 @@ const submitData = async () => {
     } catch (error) {
 
         console.log('error message:', error.message);
+        console.log('error',error.errors)
 
+
+        if (error.response){
+            console.log('Error message',error.response.data);
+            error.message = error.response.data.message
+            error.errors = error.response.data.errors
+        }
         let htmlData = '<div>';
-        htmlData += `<p>${error.message || 'เกิดข้อผิดพลาด'}</p>`;
+        htmlData += `<div>${error.message}</div>`;
+        htmlData += '<ul>';
 
-        if (Array.isArray(error.errors)) {
-            htmlData += '<ul>';
-
-            error.errors.forEach(err => {
-                htmlData += `<li>${err}</li>`;
-            });
-
-            htmlData += '</ul>';
+        for (let i = 0; i < error.errors.length; i++) {
+            htmlData += `<li>${error.errors[i]}</li>`;
         }
 
+        htmlData += '</ul>';
         htmlData += '</div>';
 
         messageDOM.innerHTML = htmlData;
