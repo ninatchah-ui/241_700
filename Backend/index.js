@@ -85,7 +85,7 @@ const initMySQL = async ()=>{
 
 // path: = GET /users สำหรับดึงข้อมูล users ทั้งหมด
 app.get('/users',async(req,res)=>{
-    const results = await conn.query('SELECT * FROM users');
+    const results = await conn.query('UPDATE users SET ? WHERE id = ?',[updateUser, id]);
     res.json(results[0]);
 })
 
@@ -231,20 +231,28 @@ app.get('/users/:id',async(req,res)=>{
 
 
 //path: = PUT /users/:id สำหรับอัพเดตหรือแก้ไขข้อมูลตาม id
-app.put('/users/:id',async(req,res)=>{
-    try{
+app.put('/users/:id', async (req, res) => {
+    try {
         let id = req.params.id;
         let updateUser = req.body;
-        const results = await conn.query('UPDATE user SET ? WHERE id = ?',[updateUser,id])
+
+        const results = await conn.query(
+            'UPDATE users SET ? WHERE id = ?',
+            [updateUser, id]
+        );
+
         res.json({
-            message:'User updated successfully',
-            data:results[0]
-        })
-    }catch(error){
-        console.error('Error updating user:',error);
-        res.status(500).json({message:'Error updating user'});
+            message: 'User updated successfully',
+            data: results[0]
+        });
+
+    } catch (error) {
+        console.error('Error updating user:', error);
+        res.status(500).json({
+            message: 'Error updating user'
+        });
     }
-})
+});
 
 
 app.delete('/users/:id',async(req,res)=>{
